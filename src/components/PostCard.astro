@@ -4,15 +4,10 @@ import { formatDate } from  "../js/utils.js"
 
 ---
 <li class="postcard">
-    <div class="postcard-header">
-          <a href={url}><h1>{title}</h1></a>
-  <p>{formatDate(date)}</p>
-    </div>
-  <div class="postcard-description">
+  <a href={url}>
+    <h1>{title}</h1>
+    <p>{formatDate(date)}</p>
     <p>{description}</p>
-    <p>{tags}</p>
-  </div>
-  <div class="postcard-footer">
-    <a href={url}>READ THE POST -</a>
-  </div>
+    <p><i class="fa-solid fa-tags"></i>{tags}</p>
+  </a>
 </li>

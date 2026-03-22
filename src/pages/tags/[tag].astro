@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostCard from '../../components/PostCard.astro';
 import "../../styles/global.css";
-const  pageBackground = "solid"
+
 
 export async function getStaticPaths() {
   const allPosts = Object.values(
@@ -36,6 +36,7 @@ const allPosts = Object.values(
 const tags = [
   ...new Set(allPosts.flatMap((post: any) => post.frontmatter.tags || [])),
 ];
+const  pageBackground = "solid"
 ---
 
 <BaseLayout pageTitle={tag}>
@@ -47,7 +48,7 @@ const tags = [
     ))}
   </div>
 
-  <p>Posts tagged with <strong>{tag}</strong></p>
+  <p>Posts tagged with <strong>#{tag}</strong></p>
 
   <ul>
     {posts.map((post: any) => (
@@ -56,6 +57,7 @@ const tags = [
     title={post.frontmatter.title}
     date={post.frontmatter.date}
     description={post.frontmatter.description}
+    tags={post.frontmatter.tags}
       />
     ))}
   </ul>

@@ -9,7 +9,7 @@
     --pink-transparent:#ffbbd199;
     --light-transparent: #ffdde899;
 
-    --background-color:#ffdde8;
+    --background-color: #ffdde8;
 }
 
 /* PRESETS */
@@ -17,6 +17,8 @@
     margin:0;
     padding: 0;
     color: var(--dark-neutral);
+    text-decoration: none;
+    list-style: none;
 }
 body{
 
@@ -27,11 +29,12 @@ body{
 
 /* BACKGROUND STYLES */
 .solid{
-    background-color: var(--background-color);
+    background-color: var(--light-neutral);
+    
 }
 .stripes{
     background-image: linear-gradient(90deg, #ece6df 38.46%, #ffffff 38.46%, #ffffff 42.31%, #61b3d6 42.31%, #61b3d6 46.15%, #ffffff 46.15%, #ffffff 50%, #d6b89c 50%, #d6b89c 88.46%, #ffffff 88.46%, #ffffff 92.31%, #61b3d6 92.31%, #61b3d6 96.15%, #ffffff 96.15%, #ffffff 100%);
-background-size: 52.00px 52.00px;
+    background-size: 52.00px 52.00px;
 }
 .gingham{
   background-image: 
@@ -54,15 +57,13 @@ background-size: 52.00px 52.00px;
 }
 
 header{
-    height: 4.5rem;
-    width: 100%;
+    height: 5rem;
+    width: 70vw;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 
-          position: absolute;
-  left: 0;
-  top: 0;
 }
 
 header .nav,
@@ -74,28 +75,37 @@ header .socials{
     list-style: none;
     justify-content: space-evenly;
     align-items: center;
-
+    font-size: 1.5rem;
 }
 
-header .title{
-    font-size: 2rem;
-}
 
 main{
     width: 50vw;
     margin: 0 auto;
-    margin-top: 4.5rem;
+
 
 }
 
-footer{
-    height: 4.5rem;
-    width: 100%;
-  left: 0;
-  bottom: 0;
+
+
+.tags{
     display: flex;
-    flex-direction: row;
+    padding: 1rem;
+
     justify-content: space-evenly;
     align-items: center;
+}
 
+.tags .tag a{
+      text-decoration: none;
+      padding: 1rem;
+      border: 1px black solid;
+}
+
+.postcard{
+    padding: 1rem;
+
+}
+.postcard:hover{
+    background-color: var(--pink-transparent);
 }
