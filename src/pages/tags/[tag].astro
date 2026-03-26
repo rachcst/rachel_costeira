@@ -42,9 +42,7 @@ const  pageBackground = "solid"
 <BaseLayout pageTitle={tag}>
   <div class="tags">
     {tags.map((t) => (
-      <p class="tag">
-        <a href={`/tags/${t}`}>{t}</a>
-      </p>
+        <a class="tag" href={`/tags/${t}`}>#{t}</a>
     ))}
   </div>
 

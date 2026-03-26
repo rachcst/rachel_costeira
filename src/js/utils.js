@@ -5,3 +5,8 @@ export function formatDate(date) {
     year: "numeric",
 })
 }
+
+export function formatTags(tags = []) {
+  return tags.map(tag => `#${tag} `);
+}
+

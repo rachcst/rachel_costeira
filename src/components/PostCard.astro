@@ -1,13 +1,19 @@
 ---
 const { title, url, date, description, tags } = Astro.props
-import { formatDate } from  "../js/utils.js"
+import { formatDate, formatTags } from  "../js/utils.js"
 
 ---
 <li class="postcard">
+  
   <a href={url}>
-    <h1>{title}</h1>
-    <p>{formatDate(date)}</p>
-    <p>{description}</p>
-    <p><i class="fa-solid fa-tags"></i>{tags}</p>
+    <p class="postdate">{formatDate(date)}</p>
+    <h1 class="posttitle">{title}</h1>
+    <p class="postdescription">{description}</p>
+   
   </a>
+<p class="posttags">
+  {(tags || []).map((tag) => (
+    <a class="tag" href={`/tags/${tag}`}>#{tag}</a>
+  ))}
+</p>
 </li>
