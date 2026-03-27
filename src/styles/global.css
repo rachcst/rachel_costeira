@@ -2,10 +2,11 @@
 
 :root{
     /* COLOR PALLATE */
-    --base-color:#ffdceb;
-    --base-varient: #d8a1ba;
-    --text-color:#290014;
-    --accent-color:#ff0095;
+    --base-color:#ffdcf9;
+    --base-varient: #d8a1cf;
+    --text-color:#29001d;
+    --accent-color:#ff00dd;
+    --base-varient-transparent: #d8a1d349;
 }
 
 
@@ -25,11 +26,10 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.solid{
     background-color: var(--base-color);
 }
+
+
 
 header,
 footer,
@@ -71,8 +71,7 @@ header .nav{
 }
 
 
-main{
-}
+
 
 footer{
     height: 4.5rem;
@@ -88,8 +87,10 @@ footer{
 
 .tags{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
+    gap: .5rem;
 }
 
 .tag{
@@ -97,18 +98,23 @@ footer{
     font-weight: 500;
     text-decoration-line: underline;
     text-decoration-style:dashed;
+    padding-right: .5rem;
 }
 
 
 .postcard{
     margin-top: 1rem;
-
+    padding: .5rem;
 }
 
-.postcard .postdate{
+.postcard:hover{
+    background-color: var(--base-varient-transparent);
+}
+
+.postdate{
     color: var(--base-varient);
 }
-.postcard .posttitle{
+.posttitle{
     font-size: 1.5rem;
     font-weight:500;
 }

@@ -4,7 +4,6 @@ const { frontmatter } = Astro.props;
 ---
 <BaseLayout>
     <meta charset="utf-8" />
-    <h1>{frontmatter.title}</h1>
-    <p>Written by {frontmatter.author}</p>
+    <p class="posttitle">{frontmatter.title}</p>
     <slot />
 </BaseLayout>

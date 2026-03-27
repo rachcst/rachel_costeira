@@ -36,7 +36,6 @@ const allPosts = Object.values(
 const tags = [
   ...new Set(allPosts.flatMap((post: any) => post.frontmatter.tags || [])),
 ];
-const  pageBackground = "solid"
 ---
 
 <BaseLayout pageTitle={tag}>
@@ -45,8 +44,6 @@ const  pageBackground = "solid"
         <a class="tag" href={`/tags/${t}`}>#{t}</a>
     ))}
   </div>
-
-  <p>Posts tagged with <strong>#{tag}</strong></p>
 
   <ul>
     {posts.map((post: any) => (
