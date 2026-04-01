@@ -1,7 +1,5 @@
 ---
 import Header from "../components/Header.astro"
-
-
 import "../styles/global.css"
 const { pageTitle } = Astro.props;
 const { pageBackground } = Astro.props;
@@ -16,13 +14,13 @@ const { pageBackground } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body >
+	<body class={pageBackground}>
         <Header />
 		<main>
             <slot />
         </main>
         
 	</body>
-	<script src="https://kit.fontawesome.com/3744dbacbe.js" crossorigin="anonymous"></script>
-	
+	<script src="../js/sidebar.js"></script>
+  <script src="https://kit.fontawesome.com/3744dbacbe.js" crossorigin="anonymous"></script>
 </html>

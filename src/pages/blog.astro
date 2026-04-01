@@ -3,20 +3,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
 import "../styles/global.css";
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
-const pageTitle = "Home";
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+const pageTitle = "Blog";
 const  pageBackground = "solid"
 ---
 
 <BaseLayout pageBackground={pageBackground} pageTitle={pageTitle}>
-    <p>Hi, I'm Rachel. Welcome to my corner of the internet.</p>    
-    <p>I'm a culinary student, interested in writing, photography, art, and a handful of other things. </p>
 
-    <h1>Recent posts:</h1>
+
+
+  <div class="tags">
+    {tags.map((tag) => (
+      <a class={tag} id="tag" href={`/tags/${tag}`}>{tag}</a>
+    ))}
+  </div>
+
     {allPosts.map((post: any) => <PostCard 
     url={post.url} 
     title={post.frontmatter.title}
     date={post.frontmatter.date}
     description={post.frontmatter.description}
-    tags={post.frontmatter.tags}
     />)}
 </BaseLayout>

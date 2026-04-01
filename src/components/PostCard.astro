@@ -5,15 +5,15 @@ import { formatDate, formatTags } from  "../js/utils.js"
 ---
 <li class="postcard">
   
-  <a href={url}>
+  <a class="postheader" href={url}>
     <p class="postdate">{formatDate(date)}</p>
     <h1 class="posttitle">{title}</h1>
 
    
   </a>
-<p class="posttags">
-  {(tags || []).map((tag) => (
-    <a class="tag" href={`/tags/${tag}`}>#{tag}</a>
-  ))}
-</p>
+  <p class="posttags">
+    {(tags || []).map((tag) => (
+      <a class={tag} id="tag" href={`/tags/${tag}`}>{tag}</a>
+    ))}
+  </p>
 </li>

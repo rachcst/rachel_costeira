@@ -41,11 +41,11 @@ const tags = [
 <BaseLayout pageTitle={tag}>
   <div class="tags">
     {tags.map((t) => (
-        <a class="tag" href={`/tags/${t}`}>#{t}</a>
+        <a id="tag" class={t} href={`/tags/${t}`}>{t}</a>
     ))}
   </div>
 
-  <ul>
+  <ul class="content">
     {posts.map((post: any) => (
       <PostCard
     url={post.url} 
