@@ -1,14 +1,18 @@
 ---
 import { navLinks } from "../data/data.ts"
 ---
-<ul class="nav-links">
+<ul class="navLinks">
     {navLinks.map((site) => (
-      <li class="nav-link">
-        <a href={site.url} target="_blank" rel="noopener noreferrer">
+      <li class="navLink">
+        <a href={site.url} >
           {site.name}
         </a>
       </li>
     ))}
 </ul>
 
-
+<style>
+  .navLink{
+    text-decoration: none;
+  }
+</style>

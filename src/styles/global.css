@@ -2,6 +2,8 @@
     /*---------------- COLOR PALLATE ----------------*/
     --DarkNeutral:#22070A;
     --Accent:#16bd00;
+    --LightNeutralTrans: #ffdae965;
+    --DarkNeutralTrans: #22070A65;
     --LightNeutral:#FFDAE9;
 
     /*---------------- FONTS ----------------*/
@@ -23,7 +25,7 @@
 *{
     margin:0;
     padding: 0;
-
+    
     box-sizing: border-box;
     color: var(--DarkNeutral);
     font-family:Arial, Helvetica, sans-serif;
@@ -57,13 +59,14 @@ p{
     font-size: var(--SmallFont);
 }
 
-a{
+.link{
     font-size: var(--SmallFont);
     text-decoration: none;
 }
-a:hover{
+.link:hover{
     color: var(--Accent);
-    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-style: dashed;
 }
 
 /*---------------- HEADER ----------------*/
@@ -87,27 +90,25 @@ header{
 }
 .title{
     width: max-content;
-
+    text-decoration: none;
     font-size: var(--SmallFont);
 }
 .headerNav{
     width: 50vw;
 }
 
-.headerNav .nav-links{
+.headerNav .navLinks{
     width: 100%;  
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
     list-style: none;
+    
 }
-
 
 .utilsContainer{
     width: 20vw;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +123,6 @@ header{
     border: 2px var(--DarkNeutral) solid;
     border-radius: 1.5rem;
     background: none;
-
 }
 .fa-sun { 
     color: var(--DarkNeutral); }
@@ -138,7 +138,7 @@ header{
 
 
 
-/* Main */
+/*---------------- MAIN ----------------*/
 
 main{
     width: 50vw;
@@ -147,7 +147,7 @@ main{
 
 
 
-/*Full screen nav*/
+/*---------------- SIDEBAR ----------------*/
 .sidebar{
     position: fixed;
     top: 0;
@@ -219,25 +219,46 @@ main{
     border-bottom: var(--LightNeutral) 2px solid;
 }
 
+.dark .postcard{
+    border: var(--LightNeutral) 2px solid;
+}
 
 /* TAGS */
 .tags{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    
-}
-
-#tag{
     padding: 1rem;
-    position: relative;
-
 }
 
+.tag{
+    text-decoration: dashed;
+}
 
 #content{
-        padding: 1rem;
+    padding: 1rem;
 }
+
+/*---------------- POSTCARD ----------------*/ 
+.postcard{
+    border: var(--DarkNeutral) 2px solid;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+}
+
+.postcard .postDate{
+    color: var(--DarkNeutralTrans);
+    font-size: 1rem;
+}
+
+
+
+
+
+
+
+
 
 @media (max-width: 600px){
     body{

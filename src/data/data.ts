@@ -20,10 +20,6 @@ export const statusData = [
 
 export const navLinks = [
     { 
-      name: "Home", 
-      url: "/" 
-    },
-    { 
       name: "About", 
       url: "/about" 
     },
@@ -66,3 +62,4 @@ export const recs = {
     }
   ]
 };
+
