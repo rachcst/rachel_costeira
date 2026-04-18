@@ -1,12 +1,16 @@
 ---
-import CloseIcon from "./CloseIcon.astro";
-import NavLinks from "./NavLinks.astro"
+import { navLinks } from "../data/data.ts"
 ---
-<nav class="sidebar">
-  <NavLinks />
-  <CloseIcon />
-</nav>
-<nav class="headerNav">
-  <NavLinks />
+<nav>
+  <h3>Navigation</h3>
+  <ul class="navLinks">
+    {navLinks.map((site) => (
+      <li class="navLink">
+        <a href={site.url} >
+          {site.name}
+        </a>
+      </li>
+    ))}
+</ul>
 </nav>
 

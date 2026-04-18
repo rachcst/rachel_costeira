@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CookingNotes from "../components/CookingNotes.astro"
+import "../styles/global.css";
+const allCookingNotes = Object.values(import.meta.glob('./cookingNotes/*.md', { eager: true }));
+const tags = [...new Set(allCookingNotes.map((post: any) => post.frontmatter.tags).flat())];
+const pageTitle = "Cooking Notes";
+const  pageBackground = "solid"
+---
+
+<BaseLayout pageBackground={pageBackground} pageTitle={pageTitle}>
+  <h1>Cooking Notes</h1>
+  <p class="highlight">A person who works with their 
+    hands is a laborer. A person who works with their 
+    hands and their brain is a craftsman. A person who 
+    works with their hands, their brain, and their heart 
+    is an artist.</p>
+    
+  <div class="tags">
+    {tags.map((tag) => (
+      <a id="tag" href={`/tags/${tag}`}>{tag}</a>
+    ))}
+  </div>
+
+    {allCookingNotes.map((post: any) => <CookingNotes 
+    url={post.url} 
+    title={post.frontmatter.title}
+    date={post.frontmatter.date}
+    description={post.frontmatter.description}
+        tags={post.frontmatter.tags}
+    />)}
+</BaseLayout>

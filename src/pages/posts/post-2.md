@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Building a blog from scratch"
+title: "1 year of cooking"
 date: 2026-03-05
-description: "How i build up this blog"
+description: "I "
 author: 'Rachel Costeira'
+categories: "Blog"
 tags: ["Programming", "Astro", "Blogging"]
 ---

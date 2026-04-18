@@ -1,0 +1,9 @@
+---
+import { buttons } from "../data/data.ts"
+---
+<ul class="buttons">
+    {buttons.map((site) => (
+      <img src={site.url} />
+    ))}
+</ul>
+

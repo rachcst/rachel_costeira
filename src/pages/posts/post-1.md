@@ -1,8 +1,9 @@
 ---
 layout: ../../layouts/MarkdownPostLayout.astro
-title: "Building a blog from scratch"
+title: "Make your own instant noodles"
 date: 2026-03-05
-description: "How i build up this blog"
+description: "I "
 author: 'Rachel Costeira'
+categories: "Blog"
 tags: ["Programming", "Astro", "Blogging"]
 ---

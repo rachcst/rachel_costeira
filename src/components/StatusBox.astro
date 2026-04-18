@@ -1,11 +1,11 @@
 ---
 import { statusData } from "../data/data.ts"
 ---
-<ul class="statusBox">
-    <h2>Currently</h2>
+<div class="statusBox">
+  <h3>Currently</h3>
+  <ul >
     {statusData.map((site) => (
       <li>{site.name}: {site.status}</li>
     ))}
 </ul>
-
-
+</div>

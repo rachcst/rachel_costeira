@@ -5,9 +5,9 @@ interface Props {
   date: string | Date;
   description?: string;
   tags?: string[];
-}
+};
 
-const { title, url, date, description, tags } = Astro.props
+const { title, url, date, description, tags } = Astro.props;
 import { formatDate } from  "../js/utils.js"
 
 ---
@@ -20,8 +20,23 @@ import { formatDate } from  "../js/utils.js"
   <div class="postFooter">
     <p class="postTags">
       {(tags || []).map((tag) => (
-        <a class={tag} id="tag" href={`/tags/${tag}`}>{tag}</a>
+        <a id="tag" href={`/tags/${tag}`}>{tag}</a>
       ))}
     </p>
   </div>
 </div>
+
+<style>
+  .postcard{
+    border: var(--DarkNeutral) 2px solid;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .postcard .postDate{
+      color: var(--DarkNeutralTrans);
+      font-size: 1rem;
+  }
+
+</style>

@@ -1,5 +1,7 @@
 ---
-import Header from "../components/Header.astro"
+import Navigation from "../components/Navigation.astro"
+import StatusBox from "../components/StatusBox.astro";
+import Buttons from "../components/Buttons.astro"
 import "../styles/global.css"
 const { pageTitle } = Astro.props;
 const { pageBackground } = Astro.props;
@@ -8,18 +10,39 @@ const { pageBackground } = Astro.props;
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
+		<link rel="icon" type="image/svg+xml" href="https://www.graphxkingdom.com/graphics/documents/doc46.gif" />
+		<link rel="icon" href="https://www.graphxkingdom.com/graphics/documents/doc46.gif" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
 	<body class={pageBackground}>
-        <Header />
-		<main>
-            <slot />
-        </main>
-        
+        <div class="bodyWrapper">
+			<header>
+				<div>
+					<span class="title">Rachel's Archive</span>
+				</div>
+				<Buttons />
+				
+			</header>
+			<div class="mainWrapper">
+				<aside>
+					<div class="aboutMeSummary">
+						<span>Hello! I'm the webmistress, writer of this website!</span>
+					</div>
+					<Navigation />
+					<StatusBox />
+					
+				</aside>
+				<main>
+					<slot />
+				</main>
+			</div>
+			<footer>
+				<span>Made by Rachel Costeira, using Astro.js</span>
+			</footer>
+			<img class="girl" src="https://graphic.neocities.org/55887f50-0fc5-4ae4-a43f-cc0b0c00eff6.gif" alt="">
+		</div>
 	</body>
 	<script src="../js/sidebar.js"></script>
   <script src="https://kit.fontawesome.com/3744dbacbe.js" crossorigin="anonymous"></script>
