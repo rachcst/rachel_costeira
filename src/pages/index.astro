@@ -7,18 +7,18 @@ const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true })
 const pageBackground = "gingham"
 ---
 <BaseLayout pageBackground={pageBackground} pageTitle={websiteData.websiteName}>
-    <h2>Welcome to Rachel's Archive!</h2>
-    <p>This is were I catalog my projects, art, recipes, etc. I hope you enjoy your stay!</p>
-
-    
-    <div class="recentPosts">
-        <h3>Recent posts:</h3>
-            {allPosts.map((post: any) => <PostCard 
-                url={post.url} 
-                title={post.frontmatter.title}
-                date={post.frontmatter.date}
-                description={post.frontmatter.description}
-                tags={post.frontmatter.tags}
-            />)}
+    <div class="heroContainer">
+        <h2 class="heroHeader">Welcome to Rachel's Archive!</h2>
+        <p class="heroContent">This is were I catalog my projects, art, recipes, etc. I hope you enjoy your stay!</p>
+    </div>
+    <div class="recentPostsContainer">
+        <h3 class="recentPostsHeader">Recent posts:</h3>
+        {allPosts.map((post: any) => <PostCard 
+        url={post.url} 
+        title={post.frontmatter.title}
+        date={post.frontmatter.date}
+        description={post.frontmatter.description}
+        tags={post.frontmatter.tags}
+    />)}
     </div>
 </BaseLayout>

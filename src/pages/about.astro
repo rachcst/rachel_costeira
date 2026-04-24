@@ -1,9 +1,30 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro"
-import { websiteText } from "../data/data.ts"
 const pageBackground = "gingham"
 const pageTitle = "About Me"
 ---
 <BaseLayout pageBackground={pageBackground} pageTitle={pageTitle}>
-    <h3>{ websiteText.aboutMe }</h3>
+    <div class="aboutMeContent">
+        <h2>Welcome to my website!</h2>
+        <p>
+        My name is Rachel Costeira. I'm 21 years old 
+        and I'm Brazilian and Portuguese, 
+        but currently living in England.
+        </p>
+        <p>As of 2026, I speak fluently Brazilian Portuguese 
+        and English (apparently I have a Canadian accent 
+        for some reason) but I speak a bit of Spanish, 
+        thanks to Spanish GCSE, and I'm learning French.</p>
+        <h3>My interests</h3>
+        <p>You'll see that my website is just a giant blend of 
+        all the things I love, which do tend to change 
+        every once in a while, so this blog/website will 
+        forever be a work in progress.</p>
+        <p>I really love gastronomy, so much that I'm studying 
+        culinary arts. But I'm also interested in fashion, 
+        programming, art and many other things. Most of 
+        which I'll write about over on the blog. 
+        You can also check out some of my photography/art
+         in the gallery.</p>
+    </div>
 </BaseLayout>

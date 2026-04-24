@@ -1,9 +1,13 @@
 ---
 import ThemeIcon from "../components/ThemeIcon.astro"
-import BurgerIcon from "./BurgerIcon.astro"
+import Sidebar from "../components/Sidebar.astro"
 ---
 
 <div class="utils">
-    <ThemeIcon />
-    <BurgerIcon />
+    <input type="checkbox" id="sidebar-active">
+    <label for="sidebar-active"  class="burgerButton">
+        <i class="fa-solid fa-bars burger"></i>
+    </label>
+  <ThemeIcon />
+  <Sidebar />
 </div>

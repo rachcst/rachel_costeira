@@ -36,8 +36,8 @@ export const navLinks = [
       url: "/blog" 
     },
     { 
-      name: "Web Recs", 
-      url: "/webrecs" 
+      name: "Gallery", 
+      url: "/gallery" 
     }
 ]
 

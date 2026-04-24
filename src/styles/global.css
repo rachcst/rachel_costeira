@@ -1,20 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Bonbon&family=IM+Fell+English:ital@0;1&family=Mountains+of+Christmas:wght@400;700&family=Princess+Sofia&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bonbon&family=IM+Fell+English:ital@0;1&family=Mountains+of+Christmas:wght@400;700&family=Mozilla+Headline:wght@200..700&family=Oxygen+Mono&family=Princess+Sofia&display=swap');
 :root{
-    --LightNeutral: #ffffff;
-    --LightNeutral99: #ffffff99;
-    --DarkNeutral: #000000;
 
-    --PrimaryDark: #882430;
-    --PrimaryMedium: #ed7888;
-    --PrimaryLight: #fdcbd2;
-    --PrimaryDark99: #88243099;
-    --PrimaryMedium99: #ed788899;
-    --PrimaryLight99: #fdcbd299;
-
-    --Accent1:#919456;
-    --Accent2: #FF8000;
-    --Accent3: #D189C2;
     /*---------------- FONTS ----------------*/
     --ExtraLargeFont:2.5rem;
     --LargeFont: 2.2rem;
@@ -26,159 +12,90 @@
     --Bonbon: "Bonbon", cursive;
     --MountainsOfChristmas: "Mountains of Christmas", serif;
     --PrincessSofia: "Princess Sofia", cursive;
+    --Mozilla-headline:"Mozilla Headline", sans-serif;
+    --Oxygen-Mono: "Oxygen Mono", monospace;
 
-    --Border: 0.15rem var(--PrimaryMedium) solid;
 }
 *{
     padding: 0;
     margin: 0;
-}
-/* BACKGROUND PATTERN */
-.gingham {
-  background-image: 
-    linear-gradient(
-      0deg,
-      var(--PrimaryMedium99) 0% 10%,
-      var(--LightNeutral99) 10% 30%,
-      var(--PrimaryLight99) 30% 50%,
-      var(--PrimaryLight99) 50% 70%,
-      var(--LightNeutral99) 70% 90%,
-      var(--PrimaryMedium99) 90% 100%
-    ),
-    linear-gradient(
-      90deg,
-      var(--PrimaryMedium99) 0% 10%,
-      var(--LightNeutral99) 10% 30%,
-      var(--PrimaryLight99) 30% 50%,
-      var(--PrimaryLight99) 50% 70%,
-      var(--LightNeutral99) 70% 90%,
-      var(--PrimaryMedium99) 90% 100%
-    );
-  background-size: 100px 100px, 100px 100px;
-}
-.polkadots {
-  background-image: 
-    radial-gradient(var(--PrimaryDark) 20%, transparent 20%),
-    radial-gradient(var(--PrimaryDark) 20%, transparent 20%);
-  background-position: 0px 0px, 60px 60px;
-  background-size: 120px 120px;
-  background-color: rgb(255, 255, 218);
+    list-style-position: inside;
+    font-family: var(--Oxygen-Mono);
+    font-weight: 100;
 }
 
 
-/* PRESETS */
-h1{
-    font-size: var(--ExtraLargeFont);
-    font-family: var(--MountainsOfChristmas);
-}
-h2{
-    font-size: var(--LargeFont);
-    font-family: var(--MountainsOfChristmas);
-}
-h3{
-    font-size: var(--MediumFont);
-    font-family: var(--MountainsOfChristmas);
-}
-p{
-    font-size: var(--ExtraSmallFont);
-    font-family:'Times New Roman', Times, serif;
-}
-a{
- font-size: var(--ExtraSmallFont);
- font-family: 'Times New Roman', Times, serif;
-}
 /* -------------------*/
 body{
     width: 100vw;
     height: 100vh;
+    
+    font-weight: 100;
 }
+
+
 .wrapper{
-    border-radius: 1rem;
-    margin: 3vh 15vw ;
+   
+    margin: 0 auto;
     width: 70vw;
     display: grid;
+    gap: 0.2rem;
+    padding: .3rem;
     grid-template-areas:
         "header header"
         "aside main"
         "footer footer";
     grid-template-columns: 1fr 3fr;
-    gap: .5rem;
-    padding: .5rem;
-    border: var(--Border);
-    background: linear-gradient(180deg,
-    var(--PrimaryMedium) 0%, 
-    var(--PrimaryLight) 100%
-    );
+    border: 1px solid black;
+
 }
-.wrapper header,
-.wrapper aside,
-.wrapper main,
-.wrapper footer{
-    background-color: var(--LightNeutral);
-    border-radius: 0.5rem;
-}
+
 /* --------------- HEADER --------------- */
 .wrapper header {
   grid-area: header;
-  height: 10vh;
-  border: var(--Border);
+  width: 100%;
+
 }
-.title{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.title a{
-    font-family: var(--MountainsOfChristmas);
-    font-size: 3.5rem;
-    color: var(--PrimaryMedium);
-    font-weight: 500;
-    text-decoration: none;
-}
+
 /* --------------- ASIDE --------------- */
 .wrapper aside {
   grid-area: aside;
-  background: linear-gradient(180deg,
-    var(--PrimaryMedium) 0%, 
-    var(--PrimaryLight) 100%
-    );
+
+  width: 100%;
     display: flex;
     flex-direction: column;
+
+    gap: 0.2rem;
 }
 
+
 .asideHeader{
-    padding: 0.5rem;
-    color: var(--PrimaryMedium);
-    border-bottom: var(--Border);
-}
-.asideContainer{
-    border-radius: 0.5rem;
-    margin-bottom: 0.5rem;
-    border: var(--Border);
-    background-color: var(--LightNeutral);
+    border: 1px black solid;
+    padding: 0.2rem;
 }
 .asideBody{
-    color: var(--PrimaryMedium);
+    padding: 0.2rem;
 }
-.asideContainer #tag,
-.asideContainer #navLink{
-    color: var(--PrimaryMedium);
-    text-decoration: none;
+
+.navContainer,
+#navLink{
+    color: orange;
 }
-.statusBox,
-.tags,
-.navLinks{
-    list-style: none;
-    padding: 0.5rem;
+
+.tagsContainer,
+.asideContainer #tag{
+    color: palevioletred;
 }
+
 
 /* --------------- MAIN --------------- */
 .wrapper main {
   grid-area: main;
-  padding: .5rem;
-  border: var(--Border);
+  width: 100%;
+  gap: 0.2rem;
+  display: flex;
+  flex-direction: column;
+  
 }
 /* --------------- FOOTER --------------- */
 .wrapper footer {
@@ -187,13 +104,13 @@ body{
     align-items: center;
     grid-area: footer;
     text-align: center;  
-    border-bottom-left-radius: .5rem;
-    border-bottom-right-radius: .5rem;
-    height: 3vh;
-    border: var(--Border);
+    border: solid black 1px;
+     height: 10vh;
+  width: 100%;
+
 }
 .postcard{
-    padding: 0.5rem;
+    padding: 0.2rem;
 }
 .postcard a{
     text-decoration: none;
@@ -201,7 +118,7 @@ body{
 .recentPosts{
     border: var(--Border);
     border-radius: .5rem;
-    padding: .5rem;
+    padding: .2rem;
 }
 
 /* Utils */
@@ -210,6 +127,19 @@ body{
     height: 2.5vh;
     display: flex;
     flex-direction:row;
+    padding: 0.2rem;
+}
+
+/*---------------- HOME PAGE ----------------*/
+
+.heroContainer,
+.recentPostsContainer{
+    border: solid black 1px;
+    padding: .2rem;
+}
+
+/*---------------- ABOUT ME PAGE ----------------*/
+.aboutMeContent{
     padding: 0.2rem;
 }
 
@@ -228,88 +158,47 @@ body{
 .dark .fa-moon { color: var(--LightNeutral); }
 
 
-/*---------------- BURGER TOGGLE ----------------*/
-.burgerIcon{
-   
 
-}
-
-.dark .fa-bars{
-    color: var(--LightNeutral);
-}
-
-.closeIcon{
-    
-    
-}
-
-.dark .fa-xmark{
-    color: var(--LightNeutral);
-}
-
-
-/*---------------- SIDEBAR ----------------*/
+/*---------------- SIDEBAR/TOGGLE BUTTON ----------------*/
 .sidebar{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--LightNeutral);
-    height: 100vh;
-    width: 100vw;
-    z-index: 999;
     display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
 }
-
-
-
-
-/*---------------- DARK MODE ----------------*/ 
-.dark .menu {
-  color: var(--LightNeutral);
+#sidebar-active{
+   display: none; 
 }
-.dark body {
-  background-color: var(--DarkNeutral);
-  color: var(--LightNeutral);
-}
-.dark .themeToggle {
-    border: 2px var(--LightNeutral) solid;
-}
-.dark h1,
-.dark h2,
-.dark h3,
-.dark p,
-.dark a{
-    color: var(--LightNeutral);
-}
-
-.dark header{
-    border-bottom: var(--LightNeutral) 2px solid;
-}
-
-.dark .postcard{
-    border: var(--LightNeutral) 2px solid;
+.burgerButton,
+.closeButton{
+    display: none;
 }
 
 @media (max-width: 600px){
 .wrapper{
-
+    width: 90%;
     display: flex;
     flex-direction: column;
 }
 .wrapper aside{
     display: none;
 }
+.sidebar{
+        position: fixed;
+        top: 0;
+        left: -100%;
+        background-color: white;
+        height: 100vh;
+        width: 100vw;
+        z-index: 10;
+        flex-direction: column;
+        transition: .5s ease-in-out;
+        display: flex;
+    }
+    .burgerButton,
+    .closeButton{
+        display: flex;
+    }
 
-.sidebar .sidebarContent{
-    height: 90vh;
-    width: 90vw;
-}
-
-.burgerIcon{
-    display: flex;
-}
+    #sidebar-active:checked ~ .sidebar{
+        left: 0;
+    }
 
 }
