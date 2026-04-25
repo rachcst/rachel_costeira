@@ -1,12 +1,18 @@
 ---
 import Navigation from "../components/Navigation.astro"
 import Tags from "../components/Tags.astro"
+import Socials from "../components/Socials.astro"
 ---
     <div class="sidebar">
-		<label for="sidebar-active" class="closeButton">
+		<div class="sidebarHeader">
+			<label for="sidebar-active" class="closeButton">
         	<i class="fa-solid fa-xmark close"></i>
     	</label>
-		<Navigation />
-		<Tags />
+		</div>
+		<div class="sidebarBody">
+			<Navigation />
+			<Tags />
+			<Socials />
+		</div>
 		
 	</div>

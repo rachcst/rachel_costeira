@@ -12,15 +12,17 @@ import { formatDate } from  "../js/utils.js"
 
 ---
 <div class="postcard">
-  <a class="postHeader" href={url}>
+  <div class="postcardHeader">
     <p class="postDate">{formatDate(date)}</p>
+  </div>
+  <div class="postcardBody">
     <h1 class="postTitle">{title}</h1>
     <p class="postDescription">{description}</p>
-  </a>
-  <div class="postFooter">
-    <p class="postTags">
+  </div>
+  <div class="postcardFooter">
+    <p class="postcardTags">
       {(tags || []).map((tag) => (
-        <a id="tag" href={`/tags/${tag}`}>{tag}</a>
+        <a id="tag" href={`/tags/${tag}`}>#{tag}</a>
       ))}
     </p>
   </div>

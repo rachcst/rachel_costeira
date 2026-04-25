@@ -1,0 +1,15 @@
+---
+import { socials } from "../data/data.ts"
+---
+<div class="asideContainer socialsContainer">
+    <h3 class="asideHeader socialsHeader">Socials</h3>
+    <ul class="asideBody socialsLinks">
+      {socials.map((site) => (
+        <li class="socialLink">
+          <a id="socialLink" href={site.url} >
+            {site.name}
+          </a>
+        </li>
+      ))}
+    </ul>
+</div>
