@@ -5,7 +5,7 @@ import "../styles/global.css";
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
 const pageTitle = "Blog";
-const pageBackground = "gingham"
+const pageBackground = "polkadot"
 ---
 
 <BaseLayout pageBackground={pageBackground} pageTitle={pageTitle}>

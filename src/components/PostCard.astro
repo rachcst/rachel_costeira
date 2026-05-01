@@ -22,7 +22,7 @@ import { formatDate } from  "../js/utils.js"
   <div class="postcardFooter">
     <p class="postcardTags">
       {(tags || []).map((tag) => (
-        <a id="tag" href={`/tags/${tag}`}>#{tag}</a>
+        <a id="tag" href={`/tags/${tag}`}>{tag}</a>
       ))}
     </p>
   </div>

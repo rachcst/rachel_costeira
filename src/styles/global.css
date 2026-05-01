@@ -1,254 +1,254 @@
-@import url('https://fonts.googleapis.com/css2?family=Bonbon&family=IM+Fell+English:ital@0;1&family=Mountains+of+Christmas:wght@400;700&family=Mozilla+Headline:wght@200..700&family=Oxygen+Mono&family=Princess+Sofia&display=swap');
-:root{
-    --DarkNeutral: #0a0e0f;
-    --LightNeutral: #ffeff4;
-    /*---------------- FONTS ----------------*/
-    --ExtraLargeFont:2.5rem;
-    --LargeFont: 2.2rem;
-    --MediumFont:1.8rem;
-    --SmallFont:1.5rem;
-    --ExtraSmallFont:1.2rem;
-
-    --IMFellEnglish: "IM Fell English", serif;
-    --Bonbon: "Bonbon", cursive;
-    --MountainsOfChristmas: "Mountains of Christmas", serif;
-    --PrincessSofia: "Princess Sofia", cursive;
-    --Mozilla-headline:"Mozilla Headline", sans-serif;
-    --Oxygen-Mono: "Oxygen Mono", monospace;
-
-    --Border: solid 0.1rem var(--DarkNeutral);
-    --LightBorder: solid 0.1rem var(--LightNeutral);
-
+@font-face {
+    font-family: PixelOperatorMono;
+    src: url(../../public/fonts/PixelOperatorMono.woff2);
 }
+@font-face {
+    font-family: PixelOperatorMono-Bold;
+    src: url(../../public/fonts/PixelOperatorMono-Bold.woff2);
+}
+
+:root{
+    /* COLOR PALLATE */
+    --DarkNeutral:#1A140E;
+    --LightNeutral:#F8F5F2;
+    --Accent: #ff00b3;
+    --Primary: #CAE2DE;
+    --Secundary:#A9DBD3;
+    --Tertiary:#82C2B7;
+
+    --DarkNeutralTransparent:#1A140E80;
+    --LightNeutralTransparent:#F8F5F280;
+    --AccentTransparent: #ff00b380;
+    --PrimaryTransparent: #CAE2DE80;
+    --SecundaryTransparent:#A9DBD380;
+    --TertiaryTransparent:#82C2B780;
+
+    /* FONTS */
+    --DefaultFont: PixelOperatorMono;
+    --BoldFont: PixelOperatorMono-Bold;
+    --DarkBorder:0.1rem solid var(--DarkNeutral);
+
+    --ExtraLargeFont:1.8rem;
+    --LargeFont:1.6rem;
+    --MediumFont:1.4rem;
+    --SmallFont: 1.2rem;
+    --ExtraSmallFont: 1rem;
+}
+
 *{
     padding: 0;
     margin: 0;
     list-style-position: inside;
-    font-family: var(--Oxygen-Mono);
-    font-weight: 100;
+    font-family: var(--DefaultFont);
+    color: var(--DarkNeutral);
 }
 
+h1{
+    font-size: var(--ExtraLargeFont);
+    color: var(--Accent);
+}
+h2{
+    font-size: var(--LargeFont);
+    color: var(--Accent);
+}
+h3{
+    font-size: var(--MediumFont);
+}
+
+p{
+    font-size: var(--ExtraSmallFont);
+}
+
+a{
+    font-size: var(--ExtraSmallFont);
+    text-decoration: none;
+    color: var(--Accent);
+}
+a:hover{
+    text-decoration: underline;
+}
+
+/* --------------- BACKGROUNDS --------------- */
 .gingham{
     background-image: linear-gradient(0deg,
-      rgba(181, 218, 232, 0.6) 0% 12.5%, rgba(255, 239, 244, 0.6) 12.5% 37.5%, rgba(181, 218, 232, 0.6) 37.5% 62.5%, rgba(255, 239, 244, 0.6) 62.5% 87.5%, rgba(181, 218, 232, 0.6) 87.5% 100%),
+      var(--PrimaryTransparent) 0% 10%, 
+      var(--TertiaryTransparent) 10% 30%, 
+      var(--SecundaryTransparent) 30% 50%, 
+      var(--SecundaryTransparent) 50% 70%, 
+      var(--TertiaryTransparent) 70% 90%, 
+      var(--PrimaryTransparent) 90% 100%),
       linear-gradient(90deg,
-        rgba(181, 218, 232, 0.6) 0% 12.5%, rgba(255, 239, 244, 0.6) 12.5% 37.5%, rgba(181, 218, 232, 0.6) 37.5% 62.5%, rgba(255, 239, 244, 0.6) 62.5% 87.5%, rgba(181, 218, 232, 0.6) 87.5% 100%
+        var(--PrimaryTransparent) 0% 10%, 
+      var(--TertiaryTransparent) 10% 30%, 
+      var(--SecundaryTransparent) 30% 50%, 
+      var(--SecundaryTransparent) 50% 70%, 
+      var(--TertiaryTransparent) 70% 90%, 
+      var(--PrimaryTransparent) 90% 100%
         ); 
-    background-size: 80px 80px,80px 80px,80px 80px,80px 80px
+    background-size: 50px 50px,50px 50px,50px 50px,50px 50px,50px 50px
+}
+
+.polkadot{
+    background-image: 
+    radial-gradient(var(--TertiaryTransparent) 21.6%, transparent 21.6%),
+    radial-gradient(var(--TertiaryTransparent) 21.6%, transparent 21.6%);
+  background-position: 0px 0px, 24px 24px;
+  background-size: 48px 48px;
+  background-color: var(--Primary);
+}
+
+.stripes{
+   background-image: linear-gradient(90deg, 
+   var(--Secundary) 9.09%, 
+   var(--Primary) 9.09%, 
+   var(--Primary) 27.27%, 
+   var(--TertiaryTransparent) 27.27%, 
+   var(--TertiaryTransparent) 31.82%, 
+   var(--Primary) 31.82%, 
+   var(--Primary) 50%, 
+   var(--Secundary) 50%, 
+   var(--Secundary) 59.09%, 
+   var(--Primary) 59.09%, 
+   var(--Primary) 77.27%, 
+   var(--TertiaryTransparent) 77.27%, 
+   var(--TertiaryTransparent) 81.82%, 
+   var(--Primary) 81.82%, 
+   var(--Primary) 100%);
+background-size: 110.00px 110.00px;
 }
 
 
-/* -------------------*/
-body{
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--LightNeutral);
-    font-weight: 100;
-    gap: 0.5rem;
-}
 
-/* --------------- UTILS --------------- */
-
-.dark body{
-    background-color: var(--DarkNeutral);
-    color: var(--LightNeutral);
-}
-
+/* --------------- WRAPPER --------------- */
 .wrapper{
     display: grid;
     margin: 0 auto;
-    margin-top: 3vh;
-    gap: 0.5rem;
-    padding: .5rem;
     width: 60%;
     grid-template-areas:
         "header header"
         "aside main"
         "footer footer";
     grid-template-columns: 1fr 3fr;
-    border: var(--Border);
+
+}
+
+header,
+aside,
+main,
+footer{
+    padding: 1rem;
     background-color: var(--LightNeutral);
-    border-radius: 2.5rem 2.5rem 0 0;
 }
-.dark .wrapper{
-    border: var(--LightBorder);
-    background-color: var(--DarkNeutral);
-}
-
-.wrapper header,
-.wrapper aside,
-.wrapper main,
-.wrapper footer{
-    border: var(--Border);
-    height: fit-content;
-    width: auto;
-}
-.dark .wrapper header,
-.dark .wrapper aside,
-.dark .wrapper main,
-.dark .wrapper footer{
-    border: var(--LightBorder);
-}
-
 /* --------------- HEADER --------------- */
 .wrapper header {
     grid-area: header;
     display: flex;
     justify-content: center;
-    align-items: end;
-    text-align: center;  
-    border-radius: 2rem 2rem 0 0;
-    height: 15vh;
+    align-items: center;
 }
 
-.wrapper header .title{
-    font-family: var(--MountainsOfChristmas);
+header .title{
+    font-family: var(--TitleFont);
+    color: var(--Tertiary);
     text-decoration: none;
-    font-size: 3rem;
 }
-
 /* --------------- ASIDE --------------- */
 .wrapper aside {
     grid-area: aside;
-    padding: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
 }
-
 
 .asideHeader{
-    padding: 0.5rem;
-    border-radius: 2rem;
+    color: var(--Tertiary);
+    background-color: var(--TertiaryTransparent);
+    border: 0.1rem solid var(--Tertiary);
+    padding: .5rem;
+    border-radius: 1.5rem;
     display: flex;
     justify-content: center;
-    font-family: var(--MountainsOfChristmas);
-    font-size: 1.5rem;
 }
 .asideBody{
-    padding: 0.5rem;
+    padding: .5rem;
 }
-
-.navHeader{
-    color: palevioletred;
-    border: 0.1rem palevioletred solid;
-    background: linear-gradient(180deg,
-    var(--LightNeutral) 0%,
-    rgba(216, 112, 147, 0.50) 100%);
-}
-
-.navContainer .navLinks,
-.navContainer a{
-    color: palevioletred;
-}
-.tagsHeader{
-    color: yellowgreen;
-    border: 0.1rem yellowgreen solid;
-    background: linear-gradient(180deg,
-    var(--LightNeutral) 0%, 
-    rgba(153, 205, 50, 0.50) 100%);
-}   
-.tagsContainer .tag,
-.tagsContainer #tag{
-    color: yellowgreen;
-}
-
-.socialsHeader{
-    color: #87ceeb;
-    border: 0.1rem skyblue solid;
-    background: linear-gradient(180deg,
-    var(--LightNeutral) 0%, 
-    rgba(135, 207, 235, 0.5) 100%);
-}
-
-.socialsContainer .socialLink,
-.socialsContainer #socialLink{
-    color: skyblue;
+.asideBody a{
+    color: var(--DarkNeutral);
+    text-decoration: none;
+    
 }
 
 /* --------------- MAIN --------------- */
 .wrapper main {
   grid-area: main;
 
-  gap: 0.2rem;
-  display: flex;
-  flex-direction: column;
-
-  padding: 0.5rem;
 }
 /* --------------- FOOTER --------------- */
 .wrapper footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     grid-area: footer;
-    text-align: center; 
-    padding: 0.5rem;
+
 }
 
-/*---------------- POSTCARD ----------------*/
-
+/* --------------- POSTCARD --------------- */
 .postcard{
-    border: var(--Border);
+    border: var(--DarkBorder);
 }
 
 .postcard .postcardHeader{
-    border-bottom: var(--Border);
+
     padding: 0.3rem;
 }
+
 .postcard .postcardBody{
     padding: 0.3rem;
 }
 
 .postcard .postcardFooter{
-    border-top: var(--Border);
     padding: 0.3rem;
 }
-
 
 .recentPosts{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-
-/*---------------- THEME TOGGLE ----------------*/
-.themeToggle{
-    border: var(--LightBorder);
-    padding: 0.5rem;
-    border-radius: 1rem;
+.postcardTags{
+    display: flex;
+    gap: 1rem;
+}
+.postcardTags #tag{
+    padding:.5rem;
+    background-color: var(--AccentTransparent);
 }
 
-.fa-sun { 
-    color: var(--DarkNeutral); }
-.fa-moon { 
-    color: transparent; 
-}
-
-.dark .fa-sun { color: transparent; }
-.dark .fa-moon { color: var(--LightNeutral); }
+/* --------------- TAGS --------------- */
 
 
-/*---------------- SIDEBAR/TOGGLE BUTTON ----------------*/
-.sidebar{
-    display: none;
-}
-#sidebar-active{
-   display: none; 
-}
+/* --------------- UTILS/SIDEBAR --------------- */
+
+.sidebar{ display: none; }
+#sidebar-active{ display: none; }
+
 .burgerButton,
-.closeButton{
-    display: none;
+.closeButton{ display: none; }
+
+.sidebarHeader,
+.utils{
+    background-color: var(--Tertiary);
+    height: 3vh;
+    display: flex;
+    justify-content: start;
+    align-items: center;
 }
+
+/*---------------- MOBILE ----------------*/
+
 @media (max-width: 600px){
     .wrapper{
         width: 90%;
         display: flex;
         flex-direction: column;
     }
-    .wrapper aside{
-        display: none;
-    }
+
+    .wrapper aside{ display: none; }
+
     .sidebar{
         position: fixed;
         top: 0;
@@ -261,29 +261,18 @@ body{
         transition: .5s ease-in-out;
         display: flex;
     }
-    .sidebarHeader,
-    .utils{
-        background-color: var(--LightNeutral);
-        border-bottom: var(--Border);
-        padding: .5rem;
-    }
 
-    .sidebarBody{
-        padding: 1rem;
-    }
+    
+
+    .sidebarBody{ padding: 1rem; }
+
     .burgerButton,
-    .closeButton{
-        display:flex;
-    }
+    .closeButton{ display:flex; }
 
     .burger,
-    .close{
-        font-size: 2.5vh;
-
-    }
+    .close{ font-size: 2.5vh; }
 
     #sidebar-active:checked ~ .sidebar{
         left: 0;
     }
-
 }

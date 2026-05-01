@@ -17,10 +17,7 @@ export const navLinks = [
       name: "Blog", 
       url: "/blog" 
     },
-    { 
-      name: "Gallery", 
-      url: "/gallery" 
-    }
+
 ]
 
 export const socials = [
