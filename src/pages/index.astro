@@ -11,9 +11,9 @@ const pageBackground = "gingham"
         <h2 class="heroHeader">Welcome to Rachel's Archive!</h2>
         <p class="heroContent">This is were I catalog my projects, art, recipes, etc. I hope you enjoy your stay!</p>
     </div>
-    <div class="recentPostsContainer">
-        <h3 class="recentPostsHeader">Recent posts:</h3>
-        <div class="recentPosts">
+    <div class="postsContainer recentPostsContainer">
+        <h3 class="postsContainerHeader recentPostsHeader">Recent posts:</h3>
+        <div class="posts recentPosts">
             {allPosts.map((post: any) => <PostCard 
         url={post.url} 
         title={post.frontmatter.title}

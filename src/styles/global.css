@@ -1,17 +1,32 @@
 @font-face {
     font-family: PixelOperatorMono;
-    src: url(../../public/fonts/PixelOperatorMono.woff2);
+    src: url(/fonts/PixelOperatorMono.woff2);
 }
 @font-face {
     font-family: PixelOperatorMono-Bold;
-    src: url(../../public/fonts/PixelOperatorMono-Bold.woff2);
+    src: url(/fonts/PixelOperatorMono-Bold.woff2);
 }
 
 :root{
     /* COLOR PALLATE */
     --DarkNeutral:#1A140E;
     --LightNeutral:#F8F5F2;
-    --Accent: #ff00b3;
+    --Accent: #ff00c8;
+    --Primary: #CAE2DE;
+    --Secundary:#A9DBD3;
+    --Tertiary:#82C2B7;
+
+    --DarkNeutralTransparent:#1A140E80;
+    --LightNeutralTransparent:#F8F5F280;
+    --AccentTransparent: #ff00b380;
+    --PrimaryTransparent: #CAE2DE80;
+    --SecundaryTransparent:#A9DBD380;
+    --TertiaryTransparent:#82C2B780;
+
+    /* COLOR PALLATE */
+    --DarkNeutral:#1A140E;
+    --LightNeutral:#F8F5F2;
+    --Accent: #ff00c8;
     --Primary: #CAE2DE;
     --Secundary:#A9DBD3;
     --Tertiary:#82C2B7;
@@ -26,7 +41,8 @@
     /* FONTS */
     --DefaultFont: PixelOperatorMono;
     --BoldFont: PixelOperatorMono-Bold;
-    --DarkBorder:0.1rem solid var(--DarkNeutral);
+    --Border: .15rem dotted var(--Tertiary);
+    --SolidBorder: .15rem solid var(--Tertiary);
 
     --ExtraLargeFont:1.8rem;
     --LargeFont:1.6rem;
@@ -59,12 +75,13 @@ p{
     font-size: var(--ExtraSmallFont);
 }
 
-a{
+#link{
     font-size: var(--ExtraSmallFont);
     text-decoration: none;
     color: var(--Accent);
+    font-family: var(--BoldFont);
 }
-a:hover{
+#link:hover{
     text-decoration: underline;
 }
 
@@ -117,18 +134,27 @@ a:hover{
 background-size: 110.00px 110.00px;
 }
 
-
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--Primary);
+}
 
 /* --------------- WRAPPER --------------- */
 .wrapper{
     display: grid;
-    margin: 0 auto;
+    gap: 1rem;
     width: 60%;
     grid-template-areas:
         "header header"
         "aside main"
         "footer footer";
     grid-template-columns: 1fr 3fr;
+    
 
 }
 
@@ -151,6 +177,7 @@ header .title{
     font-family: var(--TitleFont);
     color: var(--Tertiary);
     text-decoration: none;
+    font-size: var(--ExtraLargeFont);
 }
 /* --------------- ASIDE --------------- */
 .wrapper aside {
@@ -160,18 +187,24 @@ header .title{
 .asideHeader{
     color: var(--Tertiary);
     background-color: var(--TertiaryTransparent);
-    border: 0.1rem solid var(--Tertiary);
+    border-top: var(--Border);
+    border-right: var(--Border);
+    border-left: var(--Border);
     padding: .5rem;
-    border-radius: 1.5rem;
+    border-radius: 1.5rem 1.5rem 0 0;
     display: flex;
     justify-content: center;
 }
-.asideBody{
+
+
+.asideBody li{
+    border-top: var(--Border);
     padding: .5rem;
 }
 .asideBody a{
     color: var(--DarkNeutral);
     text-decoration: none;
+    font-size: var(--SmallFont);
     
 }
 
@@ -188,40 +221,82 @@ header .title{
 
 /* --------------- POSTCARD --------------- */
 .postcard{
-    border: var(--DarkBorder);
+    border: var(--Border);
 }
 
 .postcard .postcardHeader{
+    border-bottom: var(--Border);
+    padding: 0.5rem;
+    
+}
 
-    padding: 0.3rem;
+.postcardHeader .postDate{
+    color: var(--Tertiary);
 }
 
 .postcard .postcardBody{
-    padding: 0.3rem;
+    padding: 0.5rem;
 }
 
 .postcard .postcardFooter{
-    padding: 0.3rem;
+    border-top: var(--Border);
+    padding: 0.5rem;
 }
 
-.recentPosts{
+
+.postcardTags{
+    display: flex;
+    gap: 1rem;
+    
+}
+.postcardTags #tag{
+    padding: .5rem 1rem;
+    text-decoration: none;
+    background-color: var(--AccentTransparent);
+    
+}
+.postsContainerHeader{
+    padding: 0.5rem;
+}
+.posts{
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
 }
-.postcardTags{
+/* --------------- THEME ICON --------------- */
+.themeToggle{
+    border: var(--SolidBorder);
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.fa-sun { color: var(--Tertiary); }
+.fa-moon { color: transparent; }
+
+.dark .fa-sun { color: transparent; }
+.dark .fa-moon { color: var(--LightNeutral); }
+/* --------------- UTILS --------------- */
+.utilsWrapper{
+    display: none;
+}
+.utils {
+    width: 60%;
     display: flex;
-    gap: 1rem;
-}
-.postcardTags #tag{
-    padding:.5rem;
-    background-color: var(--AccentTransparent);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* --------------- TAGS --------------- */
+.sidebarHeader{
+    background-color: var(--Tertiary);
+    height: 4vh;
+    width: 100vw;
 
-
-/* --------------- UTILS/SIDEBAR --------------- */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .sidebar{ display: none; }
 #sidebar-active{ display: none; }
@@ -229,24 +304,48 @@ header .title{
 .burgerButton,
 .closeButton{ display: none; }
 
-.sidebarHeader,
-.utils{
-    background-color: var(--Tertiary);
-    height: 3vh;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-}
+
 
 /*---------------- MOBILE ----------------*/
 
 @media (max-width: 600px){
+    .utilsWrapper{
+    background-color: var(--Tertiary);
+    height: 4vh;
+    width: 100vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;  
+    top: 0;
+    left: 0;
+    z-index: 20;  
+
+}
     .wrapper{
-        width: 90%;
-        display: flex;
-        flex-direction: column;
+        margin-top: 10vh;
+        width: max-content;
+            display: grid;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    grid-template-columns: 1fr;
+    width: 90%;
+
     }
 
+    .utils{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+    }
+    
     .wrapper aside{ display: none; }
 
     .sidebar{

@@ -39,16 +39,20 @@ const pageBackground = "gingham"
 ---
 
 <BaseLayout pageTitle={tag} pageBackground={pageBackground}>
-  <h3>All the posts about {tag}</h3>
-  <ul class="content">
-    {posts.map((post: any) => (
+  
+  <div class="postsContainer">
+       <h3 class="postsContainerHeader">All the posts about {tag}</h3>
+       <div class="posts taggedPosts">
+         {posts.map((post: any) => (
       <PostCard
-    url={post.url} 
-    title={post.frontmatter.title}
-    date={post.frontmatter.date}
-    description={post.frontmatter.description}
-    tags={post.frontmatter.tags}
-      />
-    ))}
-  </ul>
+        url={post.url} 
+        title={post.frontmatter.title}
+        date={post.frontmatter.date}
+        description={post.frontmatter.description}
+        tags={post.frontmatter.tags}
+          />
+        ))}
+       </div>
+    </div>
 </BaseLayout>
+

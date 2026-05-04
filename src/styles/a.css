@@ -245,15 +245,5 @@ body{
 }
 
 /*---------------- THEME TOGGLE ----------------*/
-.themeToggle{
-    border: var(--LightBorder);
-    padding: 0.5rem;
-    border-radius: 1rem;
-}
 
-.fa-sun { color: var(--DarkNeutral); }
-.fa-moon { color: transparent; }
-
-.dark .fa-sun { color: transparent; }
-.dark .fa-moon { color: var(--LightNeutral); }
 

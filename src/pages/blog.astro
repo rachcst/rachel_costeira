@@ -9,11 +9,16 @@ const pageBackground = "polkadot"
 ---
 
 <BaseLayout pageBackground={pageBackground} pageTitle={pageTitle}>
-    {allPosts.map((post: any) => <PostCard 
+    <div class="postsContainer">
+       <h3 class="postsContainerHeader">All Posts</h3>
+       <div class="posts allPosts">
+         {allPosts.map((post: any) => <PostCard 
     url={post.url} 
     title={post.frontmatter.title}
     date={post.frontmatter.date}
     description={post.frontmatter.description}
         tags={post.frontmatter.tags}
     />)}
+       </div>
+    </div>
 </BaseLayout>
