@@ -1,5 +1,5 @@
 export const websiteData = {
-  websiteName: "Rachel's Archive",
+  websiteName: "Rachel's Museum",
   author: "Rachel Costeira"
 }
 
