@@ -1,12 +1,13 @@
 ---
-import Aside from "../components/Aside.astro"
+
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
-import Utils from "../components/Utils.astro"
+
+
 
 import "../styles/global.css"
 
-const { pageTitle, pageBackground } = Astro.props;
+const { pageTitle} = Astro.props;
 ---
 
 <html lang="en">
@@ -18,11 +19,9 @@ const { pageTitle, pageBackground } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
-	<body class={pageBackground}>
-		<Utils />
+	<body>
 		<div class="wrapper">
-			<Header />
-			<Aside />
+				<Header />
 			<main>
 				<slot />
 			</main>

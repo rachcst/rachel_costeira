@@ -1,5 +1,5 @@
 export const websiteData = {
-  websiteName: "Rachel's Museum",
+  websiteName: "Rachel Costeira",
   author: "Rachel Costeira"
 }
 
@@ -23,11 +23,19 @@ export const navLinks = [
 export const socials = [
     { 
       name: "Pinterest", 
-      url: "https://uk.pinterest.com/rachcst1/" 
+      url: "https://uk.pinterest.com/rachelsmuseum/" 
     },
     {
       name: "Github", 
       url: "https://github.com/rachcst" 
+    },
+    {
+      name: "Letterboxd", 
+      url: "https://boxd.it/j4FvJ" 
+    },
+    {
+      name: "Goodreads", 
+      url: "https://www.goodreads.com/rachcst" 
     },
 
 ]

@@ -1,26 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PostCard from "../components/PostCard.astro";
+import Tags from "../components/Tags.astro";
 import "../styles/global.css";
 import { websiteData } from "../data/data.ts"
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
-const pageBackground = "gingham"
 ---
-<BaseLayout pageBackground={pageBackground} pageTitle={websiteData.websiteName}>
+<BaseLayout pageTitle={websiteData.websiteName}>
     <div class="heroContainer">
         <h2 class="heroHeader">Welcome to { websiteData.websiteName }!</h2>
         <p class="heroContent">This is were I catalog my projects, art, recipes, etc. I hope you enjoy your stay!</p>
     </div>
-    <div class="postsContainer recentPostsContainer">
-        <h3 class="postsContainerHeader recentPostsHeader">Recent posts:</h3>
-        <div class="posts recentPosts">
-            {allPosts.map((post: any) => <PostCard 
-        url={post.url} 
-        title={post.frontmatter.title}
-        date={post.frontmatter.date}
-        description={post.frontmatter.description}
+    <Tags />
+  <div class="postsContainer">
+       <div class="posts allPosts">
+         {allPosts.map((post: any) => <PostCard 
+    url={post.url} 
+    title={post.frontmatter.title}
+    date={post.frontmatter.date}
+    description={post.frontmatter.description}
         tags={post.frontmatter.tags}
     />)}
-        </div>
+       </div>
     </div>
 </BaseLayout>
