@@ -7,20 +7,12 @@ import { websiteData } from "../data/data.ts"
 const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
 ---
 <BaseLayout pageTitle={websiteData.websiteName}>
-    <div class="heroContainer">
-        <h2 class="heroHeader">Welcome to { websiteData.websiteName }!</h2>
-        <p class="heroContent">This is were I catalog my projects, art, recipes, etc. I hope you enjoy your stay!</p>
-    </div>
-    <Tags />
-  <div class="postsContainer">
-       <div class="posts allPosts">
-         {allPosts.map((post: any) => <PostCard 
-    url={post.url} 
-    title={post.frontmatter.title}
-    date={post.frontmatter.date}
-    description={post.frontmatter.description}
-        tags={post.frontmatter.tags}
-    />)}
-       </div>
-    </div>
+    
+
+
+
+
+
+    
+   
 </BaseLayout>

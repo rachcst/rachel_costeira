@@ -1,14 +1,14 @@
 ---
 import { navLinks } from "../data/data.ts"
 ---
-<div class="navContainer">
-    <ul class="navLinks">
+<nav>
+    <ul>
       {navLinks.map((site) => (
-        <li class="navLink">
-          <a id="navLink" href={site.url} >
+        <li>
+          <a href={site.url} >
             {site.name}
           </a>
         </li>
       ))}
     </ul>
-</div>
+  </nav>
